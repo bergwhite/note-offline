@@ -1,3 +1,22 @@
+// IE8支持getElementsByClassName
+// http://www.songker.com/index.php/post/55.html
+if (!document.getElementsByClassName) {
+    document.getElementsByClassName = function (className, element) {
+        var children = (element || document).getElementsByTagName('*');
+        var elements = new Array();
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            var classNames = child.className.split(' ');
+            for (var j = 0; j < classNames.length; j++) {
+                if (classNames[j] == className) {
+                    elements.push(child);
+                    break;
+                }
+            }
+        }
+        return elements;
+    };
+}
 var note = {
   tme:function(){
     var t,time,year,month,day,hours,minutes,seconds,zero
@@ -67,7 +86,7 @@ var note = {
         d.appendChild(q)
       }
     }
-    l = document.querySelector('.td-ctrl')
+    l = document.getElementsByClassName('.td-ctrl')[0]
     l.value='打开控制面板'
   },
   getSearch:function(reg){
@@ -103,7 +122,7 @@ var note = {
         d.appendChild(y)
       }
     }
-    l = document.querySelector('.td-ctrl')
+    l = document.getElementsByClassName('td-ctrl')[0]
     l.value='打开控制面板'
   },
   add:function(){

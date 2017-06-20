@@ -1,6 +1,6 @@
 ## 离线笔记
 
-在线演示：[http://berg-lab.com/Note/theme/localstorage/](http://berg-lab.com/Note/theme/localstorage/)
+在线演示：[http://www.gongsikai.cn/note/offline/](http://www.gongsikai.cn/note/offline/)
 
 * 兼容IE8+
 * 项目使用原生JS、CSS和Localstorage API实现一个离线笔记
